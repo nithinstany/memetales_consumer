@@ -30,6 +30,8 @@ class SessionsController < ApplicationController
 
   # GET /resource/sign_out
   def destroy
+  puts "ccccccccccccccccccccc"
+      current_user.memetales_iphone_token.client.delete("http://localhost:3000/user_session")
     set_flash_message :notice, :signed_out if signed_in?(resource_name)
     sign_out_and_redirect(resource_name)
   end

@@ -17,6 +17,9 @@ class DashboardController < ApplicationController
   end
   
 
+  def book_i_love
+   
+  end
 
 end
 

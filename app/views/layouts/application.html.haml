@@ -3,4 +3,10 @@
     .notice= flash[:notice]
     .alert= flash[:alert]
   %body
+    - if current_user
+      = link_to "books i love" , books_i_loves_path 
+      |
+      = link_to "Sign out", destroy_user_session_path
+    - else
+      = link_to "Sign in", oauth_consumer_path("memetales_iphone")
     = yield
